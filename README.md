@@ -19,17 +19,4 @@ The **My Personal Music Player** is a project developed to practice and implemen
 
 ---
 
-## 🛠️ Getting Started
-
-### Prerequisites
-Make sure you have the following installed on your system:
-- [Git](https://git-scm.com/)  
-- Language/runtime required for your project (e.g., **Java**, **Python**, **Node.js**)  
-
-### Installation
-Clone this repository to your local machine:
-```bash
-git clone https://github.com/AkashBhagatGH/T130800112_AkashAjayBhagat_MyPersonalMusicPlayer.git
-cd T130800112_AkashAjayBhagat_MyPersonalMusicPlayer
-
 
