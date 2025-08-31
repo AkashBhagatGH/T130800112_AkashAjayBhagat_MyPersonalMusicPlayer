@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPersonal Music Player</title>
+    <link rel="stylesheet" href="music-player-css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <span>MyMusic</span>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search songs...">
+                <button id="voiceSearchBtn" class="voice-btn" title="Voice Search">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </div>
+            <div class="visitor-counter">
+                <i class="fas fa-users"></i>
+                <span id="visitorCount">0</span> visitors
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <button class="nav-btn active" data-tab="playlist">
+                        <i class="fas fa-list"></i>
+                        <span>Playlist</span>
+                    </button>
+                    <button class="nav-btn" data-tab="favorites">
+                        <i class="fas fa-heart"></i>
+                        <span>Favorites</span>
+                    </button>
+                    <button class="nav-btn" data-tab="recent">
+                        <i class="fas fa-history"></i>
+                        <span>Recently Played</span>
+                    </button>
+                </nav>
+
+                <!-- Playlist Section -->
+                <div class="tab-content active" id="playlist-tab">
+                    <h3>All Songs</h3>
+                    <div id="playlistContainer" class="playlist-container"></div>
+                </div>
+
+                <!-- Favorites Section -->
+                <div class="tab-content" id="favorites-tab">
+                    <h3>Favorite Songs</h3>
+                    <div id="favoritesContainer" class="playlist-container"></div>
+                </div>
+
+                <!-- Recently Played Section -->
+                <div class="tab-content" id="recent-tab">
+                    <h3>Recently Played</h3>
+                    <div id="recentContainer" class="playlist-container"></div>
+                </div>
+            </aside>
+
+            <!-- Player Section -->
+            <section class="player-section">
+                <!-- Now Playing Info -->
+                <div class="now-playing">
+                    <div class="album-art-container">
+                        <img id="albumArt" src="https://via.placeholder.com/400x400/6366f1/ffffff?text=No+Song" alt="Album Art">
+                        <div class="vinyl-effect"></div>
+                    </div>
+                    <div class="song-info">
+                        <h2 id="songTitle">Select a Song</h2>
+                        <p id="artistName">No Artist</p>
+                        <button id="favoriteBtn" class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <span id="currentTime" class="time">0:00</span>
+                    <div class="progress-bar">
+                        <input type="range" id="seekBar" min="0" max="100" value="0">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span id="duration" class="time">0:00</span>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="controls">
+                    <button id="shuffleBtn" class="control-btn small" title="Shuffle">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button id="prevBtn" class="control-btn" title="Previous">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="playPauseBtn" class="control-btn main" title="Play/Pause">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="nextBtn" class="control-btn" title="Next">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button id="repeatBtn" class="control-btn small" title="Repeat">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <!-- Volume Control -->
+                <div class="volume-container">
+                    <button id="volumeBtn" class="volume-btn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                    <span class="volume-value">70%</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audioPlayer"></audio>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/BezierPlugin.min.js"></script>
+
+
+    <script src="music-player-js.js"></script>
+</body>
+</html>
